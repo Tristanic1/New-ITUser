@@ -1,0 +1,3 @@
+firstName,lastName,username,email,"password"
+Bug,Tester,Tester,Bug.Tester@external.adatum.com,"defaultpassword"
+Bugs,Bunny,Bunny,Bugs.Bunny@adatum.com,"defaultpassword"

@@ -1,0 +1,45 @@
+<rss version="0.92" >
+<channel>
+    <title>JIRA</title>
+    <link>https://jira.adatum.com</link>
+    <description>This file is an XML representation of an issue</description>
+<item>
+            <title>[IT-100] Account Request #5, Bugs Bunny</title>
+                <link>https://jira.adatum.com/browse/IT-100</link>
+                    <description>&lt;p&gt;Dear IT Team,&lt;/p&gt;
+
+&lt;p&gt;Please take action regarding the following Account Request.&lt;/p&gt;
+
+&lt;p&gt;Request ID: 100&lt;br/&gt;
+Request Type: New Starter&lt;br/&gt;
+Issue Date: 10 May 2019 16:45&lt;br/&gt;
+Initiator: Elmer Fudd&lt;br/&gt;
+Requester: Elmer Fudd&lt;/p&gt;
+
+&lt;p&gt;Division: Sales&lt;br/&gt;
+Last Name: Bunny&lt;br/&gt;
+First Name: Bugs&lt;br/&gt;
+Employee group: Staff&lt;br/&gt;
+Contract Start Date: 1 Jun 2019&lt;br/&gt;
+Contract End Date: 31 Dec 2021&lt;br/&gt;
+Job Title: Carrot Muncher&lt;br/&gt;
+Reporting/Technical Officer: Beaky Buzzard&lt;br/&gt;
+(for consultants)&lt;br/&gt;
+Company: ACME Corporation&lt;br/&gt;
+
+&lt;p&gt;Person should be displayed on the intranet: Yes&lt;br/&gt;
+Comments: Likes carrots&lt;/p&gt;
+
+Personnel number: 5&lt;br/&gt;
+Acronym: S/BB&lt;br/&gt;
+
+&lt;p&gt;A new room is needed: No&lt;br/&gt;
+Room the person will be placed: 102&lt;/p&gt;
+
+&lt;p&gt;Kind regards&lt;/p&gt;
+
+&lt;p&gt;Note: This is an automatic email.&lt;/p&gt;</description>
+        <key id="12345">IT-100</key>
+    </item>
+</channel>
+</rss>
