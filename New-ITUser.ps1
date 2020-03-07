@@ -636,7 +636,7 @@ if ($EmployeeType -eq 'Contractor') {
 }
 
 switch ($EmployeeType) {
-    "Local employees" {
+    "Local employee" {
         Write-Color ' Removing user from Contractor groups and adding Local Staff groups... ' -Color Yellow -NoNewLine -ShowTime -LogFile $LogFile
         Remove-ADGroupMember -Identity 'Contractors' -Members $Username -Confirm:$false
         Remove-ADGroupMember -Identity 'Grp Contractors' -Members $Username -Confirm:$false
@@ -644,7 +644,7 @@ switch ($EmployeeType) {
         Add-ADGroupMember -Identity 'Grp LocalStaff' -Members $Username
         Write-Color 'Done' -Color Green -LogFile $LogFile
     }
-    "Temporary employees" { 
+    "Temporary employee" { 
         Write-Color ' Removing user from Contractor groups and adding Temporary Staff groups... ' -Color Yellow -NoNewLine -ShowTime -LogFile $LogFile
         Remove-ADGroupMember -Identity 'Contractors' -Members $Username -Confirm:$false
         Remove-ADGroupMember -Identity 'Grp Contractors' -Members $Username -Confirm:$false
