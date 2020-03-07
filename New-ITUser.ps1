@@ -456,8 +456,8 @@ if ($Description -match "Employee group: (\w)") {
     switch ($matches[1]) {
       "S" { $EmployeeType = 'Staff'; break }
       "C" { $EmployeeType = 'Contractor'; break }
-      "L" { $EmployeeType = 'Local Employees'; break }
-      "T" { $EmployeeType = 'Temporary Employees'; break }
+      "L" { $EmployeeType = 'Local Employee'; break }
+      "T" { $EmployeeType = 'Temporary Employee'; break }
       "I" { $EmployeeType = 'Contractor'; break }  # Intern
       "O" { $EmployeeType = 'Contractor'; break }  # Other (Visitor, Trainee)
      }    
@@ -630,8 +630,9 @@ if ($EmployeeType -eq 'Contractor') {
     Set-ADUser -Identity $Username -Add @{HomeDirectory="$HomeDir";HomeDrive="H:"}
 } else {
     $TechnicalOfficer = (Get-ADUser -Filter {DisplayName -eq $TechnicalOfficer}).DistinguishedName
-    Set-ADUser -Identity $Username -Add @{manager="$TechnicalOfficer"} 
-    Set-ADUser -Identity $Username -Add @{EmployeeNumber="$PersonnelNumber";title="$Title";HomeDirectory="$HomeDir";HomeDrive="H:"}
+    Set-ADUser -Identity $Username -Add @{manager="$TechnicalOfficer"}
+    Set-ADUser -Identity $Username -Add @{EmployeeNumber="$PersonnelNumber"}
+    Set-ADUser -Identity $Username -Add @{title="$Title";HomeDirectory="$HomeDir";HomeDrive="H:"}
 }
 
 switch ($EmployeeType) {
@@ -644,7 +645,7 @@ switch ($EmployeeType) {
         Write-Color 'Done' -Color Green -LogFile $LogFile
     }
     "Temporary employees" { 
-        Write-Color ' Removing user from Contractor groups and adding Temporary Staff groups' -Color Yellow -NoNewLine -ShowTime -LogFile $LogFile
+        Write-Color ' Removing user from Contractor groups and adding Temporary Staff groups... ' -Color Yellow -NoNewLine -ShowTime -LogFile $LogFile
         Remove-ADGroupMember -Identity 'Contractors' -Members $Username -Confirm:$false
         Remove-ADGroupMember -Identity 'Grp Contractors' -Members $Username -Confirm:$false
         Add-ADGroupMember -Identity 'TemporaryStaff' -Members $Username
